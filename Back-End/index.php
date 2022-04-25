@@ -10,8 +10,6 @@
 </head>
 <body>
 
-//git push test
-
 <!-- Modal -->
 <div class="modal fade" id="patientSignupModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
