@@ -18,7 +18,7 @@
         <h5 class="modal-title" id="exampleModalLabel">Add Patient Data</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-              <form action="insertpatdata.php" method="POST">
+              <form action="insertPatData.php" method="POST">
                 <div class="modal-body">
                   <div class="modal-body">
                     <h1>Signup</h1>
@@ -50,7 +50,7 @@
 
                             <div class="form-group">
                             <label> <b>Address</b> </label><br>
-                            <input type="text" name="address" placeholder="Enter Address" required>
+                            <input type="text" name="p_address" placeholder="Enter Address" required>
                             </div>
 
                             <div class="form-group">
@@ -65,13 +65,16 @@
 
                             <div class="form-group">
                             <label> <b>Gender</b> </label><br>
-                            <input type="text" name="gender" placeholder="Enter Gender" required>
+                            <input type="radio" name="gender" value="m" required>Male
+                            <input type="radio" name="gender" value="f" required>Female
+                            <input type="radio" name="gender" value="o" required>Others
                             </div>
 
                             <div class="form-group">
                             <label> <b>Password</b> </label><br>
                             <input type="password" name="password" placeholder="Enter Password" required>
                             </div>
+                            Already have an account?
                   </div>
                 </div>
               <div class="modal-footer">
