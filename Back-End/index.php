@@ -75,6 +75,9 @@
                             <input type="password" name="password" placeholder="Enter Password" required>
                             </div>
                             Already have an account?
+                            <p 
+                            href= "index.php?action=login">Login
+                            </p>
                   </div>
                 </div>
               <div class="modal-footer">
