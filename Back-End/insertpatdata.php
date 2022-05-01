@@ -9,6 +9,7 @@ $city = $_POST['city'];
 $country = $_POST['country'];
 $gender = $_POST['gender'];
 $password = $_POST['password'];
+$password = md5($password);
 
 if(!empty($fname) || !empty($lname) || !empty($email) || !empty($phone) || !empty($dob) || 
 !empty($address) || !empty($city) || !empty($country) || !empty($gender) || !empty($password)){

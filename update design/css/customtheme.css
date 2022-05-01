@@ -1,0 +1,27 @@
+.banner{
+	background: url(../img/1.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	min-height: 100%;
+}
+
+.bannermain{
+	text-align: center;
+	
+	padding: 50px 35px;
+    margin: 60px auto;
+
+}
+
+.banner-details h1{
+	
+}
+.banner-details p{
+	
+
+}
+
+.banner-details a{
+
+}
