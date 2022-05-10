@@ -17,13 +17,13 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Add Patient Data</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Sign Up</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <form action="insertPatData.php" method="POST">
           <div class="modal-body">
             <div class="modal-body">
-              <h1>Signup</h1>
+              <h1>Create Your Account</h1>
               <p>Fill the form to create a profile!</p>
               <div class="form-group">
                 <label> <b>First Name</b> </label><br>
@@ -82,12 +82,67 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="submit" name="insertdata" class="btn btn-primary">Submit Data</button>
+            <button type="submit" name="insertdata" class="btn btn-primary">Sign Up Now</button>
           </div>
         </form>
       </div>
     </div>
   </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="modal fade" id="patientLoginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Login Form</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form action="loginPatdata.php" method="POST">
+          <div class="modal-body">
+            <div class="modal-body">
+              <h1>Welcome Back!</h1>
+              <p>Please Sign In to your account.</p>
+              
+              <div class="form-group">
+                <label> <b>Email Address</b> </label><br>
+                <input type="email" name="email" placeholder="Enter Email Address" required>
+              </div>
+
+              <div class="form-group">
+                <label> <b>Password</b> </label><br>
+                <input type="password" name="password" placeholder="Enter Password" required>
+              </div>
+              Don't have account?
+              <a href="login.php?action=login">Signup!</a></p>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" name="insertdata" class="btn btn-primary">Sign In Now</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
 
 
 
@@ -102,6 +157,9 @@
         <div class="card-body">
           <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#patientSignupModal">
             Signup
+          </button>
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#patientLoginModal">
+            Login
           </button>
         </div>
       </div>
