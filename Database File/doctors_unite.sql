@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 10, 2022 at 03:44 PM
+-- Generation Time: May 11, 2022 at 03:51 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -64,6 +64,13 @@ CREATE TABLE `doctors` (
   `StatusBOD` enum('1','0') NOT NULL DEFAULT '0',
   `StatusExperience` enum('1','0') NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `doctors`
+--
+
+INSERT INTO `doctors` (`D_ID`, `First_Name`, `Last_Name`, `NID`, `Phone_number`, `Address`, `City`, `Country`, `Present_work_place`, `Specialist`, `Date_of_Birth`, `Educational_background`, `Email`, `Password`, `Joining_Date`, `StatusBOD`, `StatusExperience`) VALUES
+(1, 'Bradford', 'Reed', 2987143274, '01878476742', '4/A Badda', 'Dhaka', 'Bangladesh', 'United Medical Hospital', 'Neurology', '1993-05-18', 'Dhaka Medical College', 'bradford@gmail.com', '12345', '2020-06-19', '0', '0');
 
 -- --------------------------------------------------------
 
@@ -244,7 +251,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `doctors`
 --
 ALTER TABLE `doctors`
-  MODIFY `D_ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `D_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `handles_payment`
