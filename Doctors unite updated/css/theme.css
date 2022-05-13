@@ -1,0 +1,94 @@
+*{
+
+	margin: 0 px;
+	padding: 0 px;
+}
+
+nav#mainNav {
+    background-color: #d90429;
+    padding: 12px 0px;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #233d4d;
+    border: none;
+    }
+
+.title{
+  color: white;
+}    
+
+section.banner {
+  background: url(../img/1.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin: 80px 0px 0px 0px;
+  padding: 300px 0px;
+}
+
+.banner-text{
+  text-align: center;
+
+}
+
+
+/*Service Section Starts*/
+
+/*.services{
+  padding: 35px 0px;
+  margin: 0px auto;
+  background: lightgrey;
+}
+
+
+
+.services .box {
+    text-align: center;
+    border-radius: 1px;
+    margin: 13px 80px;
+    padding: 3px 20px;
+    background-color: white;
+    border-radius: 2px;
+}
+
+
+.heading{
+  text-align: center;
+  color: black;
+  font-weight: bolder;
+
+}*/
+
+.page-section{
+  background: whitesmoke;
+}
+
+span.fa-stack.fa-4x {
+    background-color: #D90429;
+    border-radius: 100px;
+    height: 125px;
+    width: 130px;
+    margin-top: 35px;
+}
+
+.srvc-icon{
+  color: white;
+  vertical-align: middle;
+  font-size: 50px;
+}
+
+.srvc-box{
+  background: white;
+  margin: 11px 17px; 
+  border: black 3px solid;
+  box-shadow: 9px 8px #c9c9c9;
+  width: 30.33333333%;
+
+}
+
+
+.col-lg-8 h2{
+  color: white;
+}
