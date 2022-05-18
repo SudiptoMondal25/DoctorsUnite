@@ -1,61 +1,77 @@
+<?php 
+
+include 'config.php';
+
+error_reporting(0);
+
+session_start();
+
+if (isset($_SESSION['username'])) {
+    header("Location: index.php");
+}
+
+if (isset($_POST['submit'])) {
+	$username = $_POST['username'];
+	$email = $_POST['email'];
+	$password = md5($_POST['password']);
+	$cpassword = md5($_POST['cpassword']);
+
+	if ($password == $cpassword) {
+		$sql = "SELECT * FROM patients WHERE email='$email'";
+		$result = mysqli_query($conn, $sql);
+		if (!$result->num_rows > 0) {
+			$sql = "INSERT INTO patients (username, email, password)
+					VALUES ('$username', '$email', '$password')";
+			$result = mysqli_query($conn, $sql);
+			if ($result) {
+				echo "<script>alert('Wow! User Registration Completed.')</script>";
+				$username = "";
+				$email = "";
+				$_POST['password'] = "";
+				$_POST['cpassword'] = "";
+			} else {
+				echo "<script>alert('Woops! Something Wrong Went.')</script>";
+			}
+		} else {
+			echo "<script>alert('Woops! Email Already Exists.')</script>";
+		}
+		
+	} else {
+		echo "<script>alert('Password Not Matched.')</script>";
+	}
+}
+
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration Form</title>
+    <title> Register Form </title>
 </head>
 <body>
-<div>
-    <?php
-    if(isset($_POST['create'])){
-        echo 'User submitted.';
-    }
-    ?>
-</div>
-
-
-    <div>
-        <form action="register.php" method="post">
-            <div class="container">
-                <h1>Signup</h1>
-                <p>Fill the form to create a profile.</p>
-                <label for="firsName"><b>First Name</b></label>
-                <input type="text" name="firstName" required>
-
-                <label for="lastName"><b>Last Name</b></label>
-                <input type="text" name="lastName" required>
-
-                <label for="email"><b>Email Address</b></label>
-                <input type="email" name="email" required>
-
-                <label for="phoneNumber"><b>First Name</b></label>
-                <input type="text" name="phoneNumber" required>
-
-                <label for="address"><b>Address</b></label>
-                <input type="text" name="address" required>
-
-                <label for="city"><b>City</b></label>
-                <input type="text" name="city" required>
-
-                <label for="country"><b>Country</b></label>
-                <input type="text" name="country" required>
-
-                <label for="gender"><b>Gender</b></label>
-                <input type="text" name="gender" required>
-
-                <label for="dateOfBirth"><b>Date Of Birth(YYYY/MM/DD)</b></label>
-                <input type="text" name="First_Name" required>
-
-                <label for=""password"><b>Password</b></label>
-                <input type="password" name="password" required>
-
-                <input type="submit" name="create" value="Sign Up">
+	<div class="container">
+		<form action="" method="POST" class="login-email">
+            <p class="login-text" style="font-size: 2rem; font-weight: 800;">Register</p>
+			<div class="input-group">
+				<input type="text" placeholder="Username" name="username" value="<?php echo $username; ?>" required>
+			</div>
+			<div class="input-group">
+				<input type="email" placeholder="Email" name="email" value="<?php echo $email; ?>" required>
+			</div>
+			<div class="input-group">
+				<input type="password" placeholder="Password" name="password" value="<?php echo $_POST['password']; ?>" required>
             </div>
-        </form>
-
-    </div>
-    
+            <div class="input-group">
+				<input type="password" placeholder="Confirm Password" name="cpassword" value="<?php echo $_POST['cpassword']; ?>" required>
+			</div>
+			<div class="input-group">
+				<button name="submit" class="btn">Register</button>
+			</div>
+			<p class="login-register-text">Have an account? <a href="index.php">Login Here</a>.</p>
+		</form>
+	</div>
 </body>
 </html>

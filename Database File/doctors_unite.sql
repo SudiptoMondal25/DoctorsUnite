@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 11, 2022 at 03:51 PM
+-- Generation Time: May 18, 2022 at 05:02 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -70,7 +70,11 @@ CREATE TABLE `doctors` (
 --
 
 INSERT INTO `doctors` (`D_ID`, `First_Name`, `Last_Name`, `NID`, `Phone_number`, `Address`, `City`, `Country`, `Present_work_place`, `Specialist`, `Date_of_Birth`, `Educational_background`, `Email`, `Password`, `Joining_Date`, `StatusBOD`, `StatusExperience`) VALUES
-(1, 'Bradford', 'Reed', 2987143274, '01878476742', '4/A Badda', 'Dhaka', 'Bangladesh', 'United Medical Hospital', 'Neurology', '1993-05-18', 'Dhaka Medical College', 'bradford@gmail.com', '12345', '2020-06-19', '0', '0');
+(1, 'Bradford', 'Reed', 2987143274, '01878476742', '4/A Badda', 'Dhaka', 'Bangladesh', 'United Medical Hospital', 'Neurology', '1993-05-18', 'Dhaka Medical College', 'bradford@gmail.com', '12345', '2020-06-19', '0', '0'),
+(2, 'Rahman', 'Abdul', 97127410481, '01621316461', '3/A, Badda', 'Dhaka', 'Bangladesh', 'United Medical Hospital', 'Cardiologist', '1992-02-18', 'MBBS at DMC', 'abdul@gmail.com', 'ehqhqw', '2017-12-14', '0', '0'),
+(3, 'Jake', 'Miller', 920712798172, '011293616', '2/C, Badda', 'Dhaka', 'Bangladesh', 'United Medical Hospital', 'Neurology', '1992-09-11', 'MBBS at DMC', 'jake@gmail.com', 'hoqohoqyo', '2018-05-17', '0', '0'),
+(4, 'Rahim', 'Chowdhury', 92812731239, '016128736', '23/F, Badda', 'Dhaka', 'Bangladesh', 'CMH', 'Cardiologist', '1996-05-24', 'MBBS at Mymenshing Medical College', 'rahim@gmail.com', 'ajhfgiwuaoiqjdq', '2021-05-21', '0', '0'),
+(5, 'Jack', 'Sparrow', 9001730790, '016128735', '9/A, Badda', 'Dhaka', 'Bangladesh', 'United Medical Hospital', 'Orthopedic', '1986-09-13', 'Harvard Medical School', 'jack07@gmail.com', 'lhfyo217h', '2013-06-14', '0', '0');
 
 -- --------------------------------------------------------
 
@@ -106,16 +110,9 @@ CREATE TABLE `medicine` (
 --
 
 CREATE TABLE `patients` (
-  `P_ID` int(11) NOT NULL,
-  `firstName` varchar(20) NOT NULL,
-  `lastName` varchar(20) NOT NULL,
-  `p_address` varchar(50) NOT NULL,
-  `city` varchar(20) NOT NULL,
-  `country` varchar(20) NOT NULL,
-  `dob` date NOT NULL,
-  `phoneNo` bigint(15) NOT NULL,
-  `email` varchar(30) DEFAULT NULL,
-  `gender` enum('m','f','o','') NOT NULL,
+  `P_ID` int(100) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `email` varchar(50) DEFAULT NULL,
   `password` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -123,13 +120,10 @@ CREATE TABLE `patients` (
 -- Dumping data for table `patients`
 --
 
-INSERT INTO `patients` (`P_ID`, `firstName`, `lastName`, `p_address`, `city`, `country`, `dob`, `phoneNo`, `email`, `gender`, `password`) VALUES
-(1, 'Sudipto', 'Mondal', 'Tejgaon', 'Dhaka', 'Bangladesh', '2001-11-25', 1729741271, 'dipto1407@gmail.com', 'm', '12323'),
-(4, 'Random', 'User', 'Tejgaon', 'Dhaka', 'Bangladesh', '1999-11-25', 1787947919, 'randomuser@gmail.com', 'm', '76382176'),
-(9, 'Random', 'User', 'Tejgaon', 'Dhaka', 'Bangladesh', '1999-11-25', 1017298719, 'randomuser2@gmail.com', 'f', '87765'),
-(10, 'Random3', 'User', 'Badda', 'Dhaka', 'Bangladesh', '1999-11-25', 1017298781, 'randomuser3@gmail.com', 'm', '536356'),
-(11, 'random4', 'User', '7/A Banani', 'Dhaka', 'Bangladesh', '1980-05-14', 1912739128, 'random002@gmail.com', 'm', '8aa903e40952a84bd7177ad2daeb5962'),
-(12, 'Random', 'User6', '13/12 A', 'Dhaka', 'Bangladesh', '1996-04-17', 123197312, 'randomuser6@gmail.com', 'm', '25d55ad283aa400af464c76d713c07ad');
+INSERT INTO `patients` (`P_ID`, `username`, `email`, `password`) VALUES
+(14, 'mario', 'mario@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055'),
+(15, 'Bario', 'bario@gmail.com', 'e10adc3949ba59abbe56e057f20f883e'),
+(16, 'Sudipto', 'dipto1407@gmail.com', 'b59c67bf196a4758191e42f76670ceba');
 
 -- --------------------------------------------------------
 
@@ -251,7 +245,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `doctors`
 --
 ALTER TABLE `doctors`
-  MODIFY `D_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `D_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `handles_payment`
@@ -269,7 +263,7 @@ ALTER TABLE `medicine`
 -- AUTO_INCREMENT for table `patients`
 --
 ALTER TABLE `patients`
-  MODIFY `P_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `P_ID` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `takes_appointment`
